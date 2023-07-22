@@ -14,7 +14,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Firevel\\RequestLogger\\RequestLoggerServiceProvider"
+                "Firevel\\RequestLogger\\Providers\\RequestLoggerServiceProvider"
             ]
         }
     },
