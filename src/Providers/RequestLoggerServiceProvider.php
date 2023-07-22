@@ -14,7 +14,7 @@ class RequestLoggerServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__.'/../config/request-logger.php', 'request-logger');
+        $this->mergeConfigFrom(__DIR__.'/../../config/request-logger.php', 'request-logger');
 
         $this->app->singleton(QueryLogger::class, function ($app) {
             return new QueryLogger();
@@ -35,7 +35,7 @@ class RequestLoggerServiceProvider extends ServiceProvider
 
         $this->publishes(
             [
-                __DIR__.'/../config/request-logger.php' => config_path('request-logger.php'),
+                __DIR__.'/../../config/request-logger.php' => config_path('request-logger.php'),
             ],
             'config'
         );
