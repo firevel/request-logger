@@ -1,0 +1,29 @@
+{
+    "name": "firevel/request-logger",
+    "description": "GCP Request Logger",
+    "type": "library",
+    "require": {
+        "illuminate/support": "^6.0|^7.0|^8.0|^9.0|^10.0"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Firevel\\RequestLogger\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Firevel\\RequestLogger\\RequestLoggerServiceProvider"
+            ]
+        }
+    },
+    "require": {
+        "google/cloud-bigquery": "^1.25"
+    },    
+    "authors": [
+        {
+            "name": "Michael Slowik"
+        }
+    ]
+}
