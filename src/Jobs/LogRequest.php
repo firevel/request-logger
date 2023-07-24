@@ -53,7 +53,7 @@ class LogRequest implements ShouldQueue
     public function requestToPayload(Request $request): array
     {
         // Use request log id or random integer for id.
-        $id = ! empty($headers['x-appengine-request-log-id']) ? $headers['x-appengine-request-log-id'][0] : $this->randomId();
+        $id = $request->hasHeader('x-appengine-request-log-id') ? $request->header('x-appengine-request-log-id') : $this->randomId();
 
         $payload = [
             'id' => $id,
