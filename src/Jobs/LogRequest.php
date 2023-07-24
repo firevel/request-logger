@@ -41,6 +41,7 @@ class LogRequest implements ShouldQueue
 
         $payload = [
             'id' => $id,
+            'environment' => config('app.env'),
             'platform' => 'gae',
             'runtime' => env('GAE_RUNTIME'),
             'service' => env('GAE_SERVICE'),

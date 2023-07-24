@@ -5,6 +5,11 @@
         "mode": "REQUIRED"
     },
     {
+        "name": "environment",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
         "name": "platform",
         "type": "STRING",
         "mode": "NULLABLE"
