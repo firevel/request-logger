@@ -53,6 +53,7 @@ class LogRequest implements ShouldQueue
             'executed_at' => now(),
             'tmp_size' => $this->getTmpSize(),
             'memory_peak' => memory_get_peak_usage(true),
+            'memory_usage' => memory_get_usage(true),
             'memory_available' => env('GAE_MEMORY_MB') * 1000000, // use bytes
         ];
 

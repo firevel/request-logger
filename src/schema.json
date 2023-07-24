@@ -65,6 +65,11 @@
         "mode": "NULLABLE"
     },
     {
+        "name": "memory_usage",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    },
+    {
         "name": "memory_available",
         "type": "INTEGER",
         "mode": "NULLABLE"
