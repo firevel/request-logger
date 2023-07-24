@@ -56,22 +56,22 @@
     },
     {
         "name": "tmp_size",
-        "type": "INTEGER",
+        "type": "NUMERIC",
         "mode": "NULLABLE"
     },
     {
         "name": "memory_peak",
-        "type": "INTEGER",
+        "type": "NUMERIC",
         "mode": "NULLABLE"
     },
     {
         "name": "memory_usage",
-        "type": "INTEGER",
+        "type": "NUMERIC",
         "mode": "NULLABLE"
     },
     {
         "name": "memory_available",
-        "type": "INTEGER",
+        "type": "NUMERIC",
         "mode": "NULLABLE"
     },
     {
