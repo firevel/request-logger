@@ -41,7 +41,7 @@ class LogRequest implements ShouldQueue
     {
         $payload =  $this->requestToPayload($this->getRequest());
 
-        $this->inserRow($payload);
+        $this->insertRow($payload);
     }
 
     /**
