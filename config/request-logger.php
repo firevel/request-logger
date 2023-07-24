@@ -6,6 +6,20 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Debug mode
+    |--------------------------------------------------------------------------
+    |
+    | Jobs dispatched after response are hard to debug because exception cant be
+    | attached to response. It might be also not handled by some log drivers.
+    |
+    | You can enable debug mode to see exeptions but data stored wont be accurate.
+    |
+    */
+
+    'debug' => env('REQUEST_LOGGER_DEBUG', false),
+
+    /*
+    |--------------------------------------------------------------------------
     | Sync job
     |--------------------------------------------------------------------------
     |

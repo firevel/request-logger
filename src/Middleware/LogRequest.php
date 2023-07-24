@@ -17,10 +17,17 @@ class LogRequest
      */
     public function handle(Request $request, Closure $next)
     {
+        if (config('request-logger.disabled')) {
+            return $next($request);
+        }
         // Execute only inside App Engine.
         if (env('GAE_SERVICE')) {
             // Dispatch log job after response is sent.
-            \Firevel\RequestLogger\Jobs\LogRequest::dispatchAfterResponse($request);
+            if (config('request-logger.debug')) {
+                \Firevel\RequestLogger\Jobs\LogRequest::dispatchNow($request);
+            } else {
+                \Firevel\RequestLogger\Jobs\LogRequest::dispatchAfterResponse($request);
+            }
         }
 
         return $next($request);
