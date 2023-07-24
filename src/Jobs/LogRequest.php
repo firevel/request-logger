@@ -77,7 +77,10 @@ class LogRequest implements ShouldQueue
         }
 
         if (config('request-logger.log.user') && $user = $request->user()) {
-            $payload['user'] = $user->toJson();
+            // Make sure user object can be serialized to json
+            if (is_object($user) && method_exists($user, 'toJson')) {
+                $payload['user'] = $user->toJson();                
+            }
         }
 
         if (config('request-logger.log.parameters')) {
