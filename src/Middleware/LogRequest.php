@@ -24,9 +24,9 @@ class LogRequest
         if (env('GAE_SERVICE')) {
             // Dispatch log job after response is sent.
             if (config('request-logger.debug')) {
-                \Firevel\RequestLogger\Jobs\LogRequest::dispatchNow($request);
+                \Firevel\RequestLogger\Jobs\LogRequest::dispatchNow();
             } else {
-                \Firevel\RequestLogger\Jobs\LogRequest::dispatchAfterResponse($request);
+                \Firevel\RequestLogger\Jobs\LogRequest::dispatchAfterResponse();
             }
         }
 

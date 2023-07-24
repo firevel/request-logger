@@ -17,22 +17,6 @@ class LogRequest implements ShouldQueue
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
     /**
-     * Request
-     * @var Illuminate\Http\Request
-     */
-    protected $request;
-
-    /**
-     * Create a new job instance.
-     *
-     * @return void
-     */
-    public function __construct($request)
-    {
-        $this->request = $request;
-    }
-
-    /**
      * Execute the job.
      *
      * @return void
@@ -161,7 +145,7 @@ class LogRequest implements ShouldQueue
      */
     public function getRequest()
     {
-        return $this->request;
+        return request();
     }
 
     /**
