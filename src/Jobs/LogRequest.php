@@ -52,9 +52,9 @@ class LogRequest implements ShouldQueue
             'path' => $request->path(),
             'execution_time' => round(microtime(true) - LARAVEL_START, 4),
             'executed_at' => now(),
-            'tmp_size' => $this->getTmpSize() / (1024 * 1024),
-            'memory_peak' => memory_get_peak_usage(true) / (1024 * 1024),
-            'memory_usage' => memory_get_usage(true) / (1024 * 1024),
+            'tmp_size' => round($this->getTmpSize() / (1024 * 1024), 3),
+            'memory_peak' => round(memory_get_peak_usage(true) / (1024 * 1024), 3),
+            'memory_usage' => round(memory_get_usage(true) / (1024 * 1024), 3),
             'memory_available' => env('GAE_MEMORY_MB'),
         ];
 
